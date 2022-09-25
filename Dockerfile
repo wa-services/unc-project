@@ -29,7 +29,7 @@ RUN apk add --no-cache \
 		file \
 		gettext \
 		git \
-		+make \		
+		make \		
 	;
 
 RUN set -eux; \

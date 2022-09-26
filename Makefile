@@ -8,6 +8,7 @@ PHP_CONT = $(DOCKER_COMP) exec php
 PHP      = $(PHP_CONT) php
 COMPOSER = $(PHP_CONT) composer
 SYMFONY  = $(PHP_CONT) bin/console
+SYMFONY_CMD = $(SYMFONY)
 
 # Misc
 .DEFAULT_GOAL = help
@@ -30,6 +31,13 @@ logs: ## Show live logs
 
 sh: ## Connect to the PHP FPM container
 	@$(PHP_CONT) sh
+
+db: ## Create and load the database with the tests fixtures
+	$(SYMFONY_CMD) doctrine:database:drop --force --if-exists
+	$(SYMFONY_CMD) doctrine:database:create --if-not-exists
+	$(SYMFONY_CMD) doctrine:migrations:migrate --no-interaction
+	$(SYMFONY_CMD) doctrine:schema:validate
+	$(SYMFONY_CMD) hautelook:fixtures:load --no-interaction --no-bundles -vv
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'

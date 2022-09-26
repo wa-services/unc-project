@@ -28,8 +28,7 @@ RUN apk add --no-cache \
 		fcgi \
 		file \
 		gettext \
-		git \
-		make \		
+		git \		
 	;
 
 RUN set -eux; \

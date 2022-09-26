@@ -1,0 +1,62 @@
+# JetBrains IDE files
+.idea
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Project artifacts (tests, ...)
+/artifacts/*
+!/artifacts/.gitkeep
+
+# Project staging artifacts (tests, ...)
+/dist/*
+!/dist/.gitkeep
+
+# Tests fixtures (dynamically created)
+/fixtures/docs/*
+
+# Docker related files
+/docker-compose.override.yml
+
+# Shell files
+.bash_history
+
+###> symfony/framework-bundle ###
+.composer
+.symfony
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/*
+/var/cache/*
+!/var/cache/.gitkeep
+/var/log/*
+!/var/log/.gitkeep
+/vendor/
+###< symfony/framework-bundle ###
+###> friendsofphp/php-cs-fixer ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+###> friends-of-behat/symfony-extension ###
+/behat.yml
+###< friends-of-behat/symfony-extension ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###

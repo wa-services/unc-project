@@ -6,5 +6,5 @@
 
 ## Comment lancer l'application ?
 
-1. Utiliser `docker compose build --pull --no-cache` pour build l'image
-2. Utiliser `docker compose up` pour lancer l'application
+1. Utiliser `make build` pour build l'image
+2. Utiliser `make up` pour lancer l'application

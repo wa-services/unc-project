@@ -13,3 +13,11 @@
 
 1. Se rendre à l'adresse : http://localhost/admin
 2. Utiliser le système CRUD
+
+## Schéma de la base de donnée actuelle sur Symfony
+
+![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/symfony-database.png)
+
+## MCD de l'application
+
+![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/MCD_Final.png)

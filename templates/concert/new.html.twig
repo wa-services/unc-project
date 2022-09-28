@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau concert{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau concert</h1>
+
+    {{ include('concert/_form.html.twig') }}
+
+    <a href="{{ path('app_concert_index') }}">Revenir en arrière</a>
+{% endblock %}

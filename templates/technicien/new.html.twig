@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau technicien{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau technicien</h1>
+
+    {{ include('technicien/_form.html.twig') }}
+
+    <a href="{{ path('app_technicien_index') }}">Revenir en arrière</a>
+{% endblock %}

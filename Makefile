@@ -18,6 +18,9 @@ SYMFONY_CMD = $(SYMFONY)
 build: ## Builds the Docker images
 	@$(DOCKER_COMP) build --pull --no-cache
 
+test: ## Launch unit tests
+	@$(PHP_CONT) php bin/phpunit
+
 up: ## Start the docker hub in detached mode (no logs)
 	@$(DOCKER_COMP) up --detach
 
@@ -37,8 +40,6 @@ db: ## Create and load the database with the tests fixtures
 	$(SYMFONY_CMD) doctrine:database:create --if-not-exists
 	$(SYMFONY_CMD) doctrine:migrations:migrate --no-interaction
 	$(SYMFONY_CMD) doctrine:schema:validate
-	$(SYMFONY_CMD) hautelook:fixtures:load --no-interaction --no-bundles -vv
-
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
 	@$(eval c ?=)

@@ -4,10 +4,11 @@
 
 ![CI](https://github.com/dunglas/symfony-docker/workflows/CI/badge.svg)
 
-## Comment lancer l'application ?
+## Commandes utiles
 
 1. Utiliser `make build` pour build l'image
 2. Utiliser `make up` pour lancer l'application
+3. Utiliser `make test` pour lancer les tests unitaires
 
 ## Comment accéder à l'interface ?
 

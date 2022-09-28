@@ -4,14 +4,16 @@ namespace App\Entity;
 
 use App\Repository\ArtisteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\UuidV6 as Uuid;
 
 #[ORM\Entity(repositoryClass: ArtisteRepository::class)]
 class Artiste
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
+    private ?Uuid $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $nomArtiste = null;
@@ -22,7 +24,7 @@ class Artiste
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $roleArtiste = null;
 
-    public function getId(): ?int
+    public function getId(): Uuid
     {
         return $this->id;
     }

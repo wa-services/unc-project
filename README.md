@@ -8,3 +8,8 @@
 
 1. Utiliser `make build` pour build l'image
 2. Utiliser `make up` pour lancer l'application
+
+## Comment accéder à l'interface ?
+
+1. Se rendre à l'adresse : http://localhost/admin
+2. Utiliser le système CRUD

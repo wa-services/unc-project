@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Technicien index{% endblock %}
+{% block title %}Technicien{% endblock %}
 
 {% block body %}
-    <h1>Technicien index</h1>
+    <h1>Technicien</h1>
 
-    <table class="table">
+    <table class="table" id="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>NomTechnicien</th>
-                <th>PrenomTechnicien</th>
-                <th>QualifTechnicien</th>
-                <th>actions</th>
+                <th>Id du technicien</th>
+                <th>Nom du technicien</th>
+                <th>Prenom du technicien</th>
+                <th>Qualification du technicien</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,125 @@
                 <td>{{ technicien.prenomTechnicien }}</td>
                 <td>{{ technicien.qualifTechnicien }}</td>
                 <td>
-                    <a href="{{ path('app_technicien_show', {'id': technicien.id}) }}">show</a>
-                    <a href="{{ path('app_technicien_edit', {'id': technicien.id}) }}">edit</a>
+                    <a href="{{ path('app_technicien_show', {'id': technicien.id}) }}">Voir</a>
+                    <a href="{{ path('app_technicien_edit', {'id': technicien.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Pas de données</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_technicien_new') }}">Create new</a>
+    <button class="button-60" role="button"><a href="{{ path('app_technicien_new') }}">Créer un nouveau technicien</a></button>
+
+    <style>
+        #table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: dimgrey;
+            color: white;
+        }
+        h1 {
+            color: slategrey;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        table, a {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        table {}
+        th, td {
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        td {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        a {
+            text-underline-offset: unset;
+            color: dimgrey;
+        }
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        .button-60 {
+            align-items: center;
+            appearance: none;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: .375em;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: dimgrey;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            height: 2.5em;
+            justify-content: center;
+            line-height: 1.5;
+            padding: calc(.5em - 1px) 1em;
+            margin-top: 10px;
+            margin-left: 1410px;
+            position: relative;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .button-60:active {
+            border-color: #4a4a4a;
+            outline: 0;
+        }
+
+        .button-60:focus {
+            border-color: #485fc7;
+            outline: 0;
+        }
+
+        .button-60:hover {
+            border-color: #b5b5b5;
+        }
+
+        .button-60:focus:not(:active) {
+            box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+        }
+
+    </style>
 {% endblock %}

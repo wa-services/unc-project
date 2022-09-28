@@ -5,26 +5,134 @@
 {% block body %}
     <h1>Billet</h1>
 
-    <table class="table">
+    <table class="table" id="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Id du billet</th>
                 <td>{{ billet.id }}</td>
             </tr>
             <tr>
-                <th>PrixBillet</th>
+                <th>Prix du billet</th>
                 <td>{{ billet.prixBillet }}</td>
             </tr>
             <tr>
-                <th>ReferenceBillet</th>
+                <th>Reference du billet</th>
                 <td>{{ billet.referenceBillet }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_billet_index') }}">back to list</a>
+    <button class="button-60" role="button"><a href="{{ path('app_billet_index') }}">Revenir en arrière</a></button>
 
-    <a href="{{ path('app_billet_edit', {'id': billet.id}) }}">edit</a>
+    <button class="button-60" role="button"><a href="{{ path('app_billet_edit', {'id': billet.id}) }}">Modifier</a></button>
 
     {{ include('billet/_delete_form.html.twig') }}
+    <style>
+        #table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+        tr:hover {background-color: #ddd;}
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: dimgrey;
+            color: white;
+        }
+        h1 {
+            color: slategrey;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        table, a {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+        table {}
+        th, td {
+            padding-left: 20px;
+            padding-right: 10px;
+            margin-left: 200px;
+        }
+        td {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        a {
+            text-underline-offset: unset;
+            color: dimgrey;
+        }
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        .button-60 {
+            align-items: center;
+            appearance: none;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            border-radius: .375em;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: dimgrey;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            height: 2.5em;
+            justify-content: center;
+            line-height: 1.5;
+            padding: calc(.5em - 1px) 1em;
+            margin-top: 10px;
+            margin-left: 1410px;
+            position: relative;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .button-60:active {
+            border-color: #4a4a4a;
+            outline: 0;
+        }
+
+        .button-60:focus {
+            border-color: #485fc7;
+            outline: 0;
+        }
+
+        .button-60:hover {
+            border-color: #b5b5b5;
+        }
+
+        .button-60:focus:not(:active) {
+            box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+        }
+
+    </style>
 {% endblock %}

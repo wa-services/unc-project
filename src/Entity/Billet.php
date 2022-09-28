@@ -4,14 +4,16 @@ namespace App\Entity;
 
 use App\Repository\BilletRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\UuidV6 as Uuid;
 
 #[ORM\Entity(repositoryClass: BilletRepository::class)]
 class Billet
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
+    private ?Uuid $id = null;
 
     #[ORM\Column(nullable: true)]
     private ?int $prixBillet = null;
@@ -19,7 +21,7 @@ class Billet
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $referenceBillet = null;
 
-    public function getId(): ?int
+    public function getId(): Uuid
     {
         return $this->id;
     }

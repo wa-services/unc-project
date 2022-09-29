@@ -1,4 +1,4 @@
-# UNC - Application de gestion d'un concert
+# UNC - Application de gestion d'un concert - v.0.0.1
 
 <a href="https://zupimages.net/viewer.php?id=22/38/ffye.png"><img src="https://zupimages.net/up/22/38/ffye.png" alt="" /></a>
 

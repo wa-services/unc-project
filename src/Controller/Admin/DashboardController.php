@@ -35,7 +35,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Union Nationale des Concerts');
+            ->setTitle('<img src="https://zupimages.net/up/22/38/ffye.png" alt="logo"></img>');
     }
 
     public function configureMenuItems(): iterable

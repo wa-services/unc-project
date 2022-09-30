@@ -17,7 +17,7 @@
 
 ## Schéma de la base de données actuelle sur Symfony
 
-![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/symfony-database.png)
+![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/symfony-database2.png)
 
 ## MCD de l'application
 

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TechnicienRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\UuidV6 as Uuid;
 
@@ -23,6 +25,14 @@ class Technicien
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $qualifTechnicien = null;
+
+    #[ORM\ManyToMany(targetEntity: Groupe::class, mappedBy: 'techniciens')]
+    private Collection $groupes;
+
+    public function __construct()
+    {
+        $this->groupes = new ArrayCollection();
+    }
 
     public function getId(): Uuid
     {
@@ -61,6 +71,33 @@ class Technicien
     public function setQualifTechnicien(?string $qualifTechnicien): self
     {
         $this->qualifTechnicien = $qualifTechnicien;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Groupe>
+     */
+    public function getGroupes(): Collection
+    {
+        return $this->groupes;
+    }
+
+    public function addGroupe(Groupe $groupe): self
+    {
+        if (!$this->groupes->contains($groupe)) {
+            $this->groupes->add($groupe);
+            $groupe->addTechnicien($this);
+        }
+
+        return $this;
+    }
+
+    public function removeGroupe(Groupe $groupe): self
+    {
+        if ($this->groupes->removeElement($groupe)) {
+            $groupe->removeTechnicien($this);
+        }
 
         return $this;
     }

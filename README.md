@@ -22,3 +22,7 @@
 ## MCD de l'application
 
 ![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/MCD_Final.png)
+
+## Gif de l'application 
+
+![image](https://github.com/b2p-wilem/unc-project/blob/main/doc/Application%20record.gif)

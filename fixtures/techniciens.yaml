@@ -1,0 +1,13 @@
+#
+# Fixtures for Technicien
+#
+App\Entity\Technicien:
+    technicien_1:
+        nomTechnicien: Andrew
+        prenomTechnicien: Jackson
+        qualifTechnicien: Ingénieur
+
+    technicien_{2..99}:
+        nomTechnicien: <randomElement(['Jackson','Valdemar', 'Palel', 'Minos', 'Clare'])>
+        prenomTechnicien: <randomElement(['Martin', 'John', 'Joe', 'Eric', 'Pierre'])>
+        qualifTechnicien: <randomElement(['Ingénieur Son','Ingénieur Lumières', 'Technicien'])>

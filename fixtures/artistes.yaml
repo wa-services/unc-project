@@ -1,0 +1,13 @@
+#
+# Fixtures for Artiste
+#
+App\Entity\Artiste:
+    artiste_1:
+        nomArtiste: Albert
+        prenomArtiste: Bayet
+        roleArtiste: Guitariste
+
+    artiste_{2..99}:
+        nomArtiste: <randomElement(['Martin','Bernard', 'Thomas', 'Moreau', 'Lopez', 'Hubert', 'Carpentier', 'Moulin', 'Simon', 'Sanchez', 'Louis', 'Guillot'])>
+        prenomArtiste: <randomElement(['Paul','Pierre','Jean','Karim','Andrew','Boubakar', 'Eric','Adrien','Marc','Patrick','Laurent', 'Emmanuel', 'Imad', 'Frédéric', 'Ayman', 'Jérémie', 'Wilem', 'Ouail', 'Bilal', 'Guevorg'])>
+        roleArtiste: <randomElement(['Chanteur', 'Batteur', 'Guitariste'])>

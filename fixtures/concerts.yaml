@@ -1,0 +1,13 @@
+#
+# Fixtures for Concert
+#
+App\Entity\Concert:
+    concert_1:
+        nomConcert: Speciale
+        dateConcert: <(new \DateTime('2022-03-09'))>
+        nomSalle: Salle 2
+
+    concert_{2..99}:
+        nomConcert: <randomElement(['ACDC', 'NTM', 'Jul', 'Naps', 'Lartiste', 'TheWeknd'])>
+        dateConcert: <(new \DateTime('2022-03-11'))>
+        nomSalle: <randomElement(['Salle 1','Salle 2','Salle 3','Salle 4'])>

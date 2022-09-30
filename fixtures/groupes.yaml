@@ -1,0 +1,11 @@
+#
+# Fixtures for Groupe
+#
+App\Entity\Groupe:
+    groupe_1:
+        nomGroupe: ACDC
+        categorieGroupe: Rock
+
+    groupe_{2..99}:
+        nomGroupe: <randomElement(['ACDC', 'NTM', 'Jul', 'Naps', 'Lartiste', 'TheWeknd'])>
+        categorieGroupe: <randomElement(['Rap', 'Rap US', 'Pop', 'Rock'])>

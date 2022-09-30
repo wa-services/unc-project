@@ -1,0 +1,11 @@
+#
+# Fixtures for Billet
+#
+App\Entity\Billet:
+    billet_1:
+        prixBillet: 20
+        referenceBillet: concert-14jul
+
+    billet_{2..99}:
+        prixBillet: 2<randomElement([0, 5, 7, 3, 00])>
+        referenceBillet: <randomElement(['concert-14jul', 'concert-12juin', 'concert-29mai', 'concert-12aout'])>

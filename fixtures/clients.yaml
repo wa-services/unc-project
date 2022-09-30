@@ -1,0 +1,13 @@
+#
+# Fixtures for Client
+#
+App\Entity\Client:
+    client_1:
+        nomClient: 20
+        prenomClient: concert-14jul
+        dateReservation: <(new \DateTime('2022-03-09'))>
+
+    client_{2..99}:
+        nomClient: 2<randomElement([0, 5, 7, 3, 00])>
+        prenomClient: <randomElement(['concert-14jul', 'concert-12juin', 'concert-29mai', 'concert-12aout'])>
+        dateReservation: <(new \DateTime('2022-10-09'))>

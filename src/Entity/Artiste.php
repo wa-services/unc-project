@@ -24,6 +24,9 @@ class Artiste
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $roleArtiste = null;
 
+    #[ORM\ManyToOne(inversedBy: 'artistes')]
+    private ?Groupe $groupe = null;
+
     public function getId(): Uuid
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Artiste
     public function setRoleArtiste(?string $roleArtiste): self
     {
         $this->roleArtiste = $roleArtiste;
+
+        return $this;
+    }
+
+    public function getGroupe(): ?Groupe
+    {
+        return $this->groupe;
+    }
+
+    public function setGroupe(?Groupe $groupe): self
+    {
+        $this->groupe = $groupe;
 
         return $this;
     }

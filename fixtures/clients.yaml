@@ -6,7 +6,6 @@ App\Entity\Client:
         nomClient: 20
         prenomClient: concert-14jul
         dateReservation: <(new \DateTime('2022-03-09'))>
-        billets: '@billet_1'
 
     client_{2..99}:
         nomClient: 2<randomElement([0, 5, 7, 3, 00])>

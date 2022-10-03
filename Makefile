@@ -39,7 +39,8 @@ db: ## Create and load the database with the tests fixtures
 	$(SYMFONY_CMD) doctrine:database:drop --force --if-exists
 	$(SYMFONY_CMD) doctrine:database:create --if-not-exists
 	$(SYMFONY_CMD) doctrine:migrations:migrate --no-interaction
-	$(SYMFONY_CMD) doctrine:schema:validate
+	$(SYMFONY_CMD) doctrine:schema:update -f
+	$(SYMFONY_CMD) hautelook:fixtures:load --no-bundles
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
 	@$(eval c ?=)

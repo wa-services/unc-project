@@ -8,7 +8,8 @@
 
 1. Utiliser `make build` pour build l'image
 2. Utiliser `make up` pour lancer l'application
-3. Utiliser `make test` pour lancer les tests unitaires
+3. Utiliser `make db` pour mettre à jour la base de données(à faire au premier lancement)
+4. Utiliser `make test` pour lancer les tests unitaires
 
 ## Comment accéder à l'interface ?
 

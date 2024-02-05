@@ -27,7 +27,7 @@
         "symfony/uid": "6.1.*",
         "symfony/validator": "6.1.*",
         "symfony/webpack-encore-bundle": "^1.15",
-        "symfony/yaml": "6.1.*"
+        "symfony/yaml": "6.4.*"
     },
     "config": {
         "allow-plugins": {
